@@ -37,7 +37,7 @@ function obtenerDatos() {
     document.getElementById(
       "user"
     ).innerHTML = `Bienvenido a tu centro de control ${usuario}`;
-  } 
+  }
 }
 
 function cerrarSesion() {
