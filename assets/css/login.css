@@ -1,0 +1,154 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: "open sans", sans-serif;
+    box-sizing: border-box;
+    background: linear-gradient(150deg, rgb(255, 147, 71), rgb(255, 99, 71), rgb(127, 49, 35));
+    height: 100vh;
+}
+
+.formulario {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 400px;
+    background: white;
+    border-radius: 10px;
+}
+
+.formulario h1 {
+    text-align: center;
+    padding: 0 0 20px 0;
+    border-bottom: 1px solid silver;
+}
+
+.formulario form {
+    padding: 0 40px;
+    box-sizing: border-box;
+}
+
+form .username {
+    position: relative;
+    border-bottom: 2px solid #adadad;
+    margin: 30px 0;
+}
+
+form .pass {
+    position: relative;
+    border-bottom: 2px solid #adadad;
+    margin: 30px 0;
+}
+
+.username input {
+    width: 100%;
+    padding: 0 5px;
+    height: 40px;
+    font-size: 16px;
+    border: none;
+    background: none;
+    outline: none;
+}
+
+.pass input {
+    width: 100%;
+    padding: 0 5px;
+    height: 40px;
+    font-size: 16px;
+    border: none;
+    background: none;
+    outline: none;
+}
+
+.username label {
+    position: absolute;
+    top: 50%;
+    left: 5px;
+    color: #adadad;
+    transform: translateY(-45%);
+    font-size: 16px;
+    pointer-events: none;
+}
+
+.pass label {
+    position: absolute;
+    top: 50%;
+    left: 5px;
+    color: #adadad;
+    transform: translateY(-45%);
+    font-size: 16px;
+    pointer-events: none;
+}
+
+.username span::before {
+    content: '';
+    position: absolute;
+    top: 40px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: tomato;
+}
+
+.pass span::before {
+    content: '';
+    position: absolute;
+    top: 40px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: tomato;
+}
+
+
+.username input:focus~label,
+.pass input:focus~label {
+    top: -15px;
+    color: tomato;
+    transition: .5s;
+}
+
+.username input:focus~span::before,
+.pass input:focus~span::before {
+    width: 100%;
+}
+
+.recordar {
+    margin: -5px 0 20px 5px;
+    color: tomato;
+    cursor: pointer;
+}
+
+input[type="submit"] {
+    width: 100%;
+    height: 50px;
+    border: 1px solid;
+    border-radius: 25px;
+    background: tomato;
+    font-size: 18px;
+    color: white;
+    cursor: pointer;
+    outline: none;
+}
+
+input[type="submit"]:hover {
+    border-color: rgb(127, 49, 35);
+    transition: .5s;
+
+}
+
+.registro {
+    margin: 30px 0;
+    text-align: center;
+    font-size: 16px;
+    color: black;
+}
+
+.registro a {
+    color: blue;
+    text-decoration: none;
+}
+
+.registro a:hover {
+    text-decoration: underline;
+}
