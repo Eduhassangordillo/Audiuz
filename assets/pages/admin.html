@@ -3,19 +3,54 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <title>Administrador</title>
 </head>
 <body>
     
-    <h1>Agrega, edita o elimina tus canciones </h1>
+    <h1 id="user"> </h1>
+    <h2>Agrega, edita o elimina tus canciones </h2>
 
-    <h2 id="user"> </h2>
+    <div class="container">
+        <h1 class="text-center">Administración de canciones</h1>
+        <button class="btn btn-primary mb-3" onclick="mostrarFormulario()">Agregar canción</button>
+    
+        <form id="formularioCancion" class="mb-3" style="display: none;">
+            <div class="mb-3">
+                <label for="nombreCancion" class="form-label">Nombre de la canción</label>
+                <input type="text" class="form-control" id="nombreCancion" placeholder="Nombre de la canción">
+            </div>
+            <div class="mb-3">
+                <label for="artistaCancion" class="form-label">Artista de la canción</label>
+                <input type="text" class="form-control" id="artistaCancion" placeholder="Artista de la canción">
+            </div>
+            <button type="button" class="btn btn-primary" onclick="añadirCancion()">Guardar</button>
+        </form>
+    
+        <table class="table table-striped" id="tablaCanciones">
+            <thead>
+                <tr>
+                    <th>Nombre de la canción</th>
+                    <th>Artista de la canción</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody id="canciones"></tbody>
+        </table>
+    </div>
 
-    <button onclick="cerrarSesion()">Cerrar Sesion</button>
+
+    <button class="btn btn-danger" onclick="cerrarSesion()">Cerrar Sesion</button>
 
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+    crossorigin="anonymous"></script>
 
     <script src="/assets/script/login.js"></script>
+    <script src="/assets/script/admin.js"></script>
+
 
 </body>
 </html>
