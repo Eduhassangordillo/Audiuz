@@ -10,12 +10,12 @@
 <body>
     
     <h1 id="user"> </h1>
-    <h2>Agrega, edita o elimina tus canciones </h2>
+  
 
     <div class="container">
         <h1 class="text-center">Administración de canciones</h1>
-        <button class="btn btn-primary mb-3" onclick="mostrarFormulario()">Agregar canción</button>
-    
+       
+        <h2>Agrega, edita o elimina tus canciones </h2>
         <form id="formularioCancion" class="mb-3" style="display: none;">
             <div class="mb-3">
                 <label for="nombreCancion" class="form-label">Nombre de la canción</label>
@@ -25,10 +25,11 @@
                 <label for="artistaCancion" class="form-label">Artista de la canción</label>
                 <input type="text" class="form-control" id="artistaCancion" placeholder="Artista de la canción">
             </div>
+            <input type="hidden" id="indiceCancion">
             <button type="button" class="btn btn-primary" onclick="añadirCancion()">Guardar</button>
         </form>
-    
-        <table class="table table-striped" id="tablaCanciones">
+
+        <table class="table table-striped table-hover" id="tablaCanciones">
             <thead>
                 <tr>
                     <th>Nombre de la canción</th>
@@ -38,26 +39,33 @@
             </thead>
             <tbody id="canciones"></tbody>
         </table>
-    </div>
+    </div>        <form id="formularioEditar" class="mb-3" style="display: none;">
+        <div class="mb-3">
+            <label for="nombreCancionEditar" class="form-label">Nombre de la canción</label>
+            <input type="text" class="form-control" id="nombreCancionEditar" placeholder="Nombre de la canción">
+        </div>
+        <div class="mb-3">
+            <label for="artistaCancionEditar" class="form-label">Artista de la canción</label>
+            <input type="text" class="form-control" id="artistaCancionEditar" placeholder="Artista de la canción">
+        </div>
+        <input type="hidden" id="indiceCancionEditar">
+        <button type="button" class="btn btn-primary" onclick="guardarCambios()">Guardar cambios</button>
+    </form>
+    <button class="btn btn-primary mb-3" onclick="mostrarFormulario()">Agregar canción</button>
 
 
 
 
-
-    <h1>Agrega, edita o elimina tus canciones</h1>
-
-
-
-    <button class="btn btn-danger" onclick="cerrarSesion()">Cerrar Sesion</button>
+    <button class="btn btn-dark" onclick="cerrarSesion()">Cerrar Sesion</button>
 
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
     crossorigin="anonymous"></script>
-    <script src="/assets/js/admin.js"></script>
+
     <script src="/assets/js/login.js"></script>
 
 
-
+    <script src="/assets/js/admin.js"></script>
   </body>
 </html>
