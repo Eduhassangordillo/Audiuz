@@ -1,4 +1,26 @@
-let canciones = []
+function obtenerDatos() {
+  const usuario = localStorage.getItem("user");
+  console.log(usuario)
+  if (usuario) {
+    document.getElementById("user").innerHTML = `Bienvenido a tu centro de control ${usuario}`;
+  }
+}
+
+window.addEventListener("load", function () {
+  obtenerDatos();
+});
+
+
+
+
+
+
+
+
+
+
+
+/* let canciones = []
 
 function mostrarFormulario() {
   // Mostrar el formulario para agregar una nueva canción
@@ -74,4 +96,4 @@ function editarCancion(id) {
 function eliminarCancion(id) {
   // Eliminar una canción existente de la tabla
   // Aquí necesitarás eliminar los datos de la canción con el id dado
-}
+} */

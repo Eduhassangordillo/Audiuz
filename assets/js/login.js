@@ -1,4 +1,5 @@
-function inicioSesion() {
+function inicioSesion(event) {
+  event.preventDefault();
   const username = document.getElementById("username").value;
   const password = document.getElementById("password").value;
 
@@ -31,15 +32,18 @@ function inicioSesion() {
     });
 }
 
-function obtenerDatos() {
+/* function obtenerDatos() {
   const usuario = localStorage.getItem("user");
+  console.log(usuario)
   if (usuario) {
     document.getElementById(
       "user"
     ).innerHTML = `Bienvenido a tu centro de control ${usuario}`;
   }
 }
-
+window.addEventListener("load", function () {
+  obtenerDatos();
+}); */
 function cerrarSesion() {
   localStorage.removeItem("user");
 
@@ -53,6 +57,4 @@ function cerrarSesion() {
     window.location.href = "login.html";
   }, 2000);
 }
-document.addEventListener("DOMContentLoaded", function () {
-  obtenerDatos();
-});
+
