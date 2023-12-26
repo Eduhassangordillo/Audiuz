@@ -1,13 +1,13 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="../css/login.css" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Error 404</title>
     <link rel="stylesheet" href="../css/index.css" />
-    <title>LOGIN</title>
+    <link rel="stylesheet" href="../css/error404.css" />
   </head>
-
   <body>
     <div class="nav-desk">
       <div class="cont-ico">
@@ -19,7 +19,9 @@
         <div class="linkss"><a href="../../index.html">Inicio</a></div>
         <div class="linkss"><a href="#">reproductor</a></div>
         <div class="linkss"><a href="#">sobre nosotros</a></div>
-        <div class="loglink"><a href="./login.html">inicio de sesion</a></div>
+        <div class="loglink">
+          <a href="./login.html">inicio de sesion</a>
+        </div>
       </div>
     </div>
     <div class="nav-mobile">
@@ -53,27 +55,18 @@
       </div>
     </div>
 
-    <div class="formulario">
-      <h1>Inicio de sesion</h1>
-      <form id="loginFrom">
-        <div class="username">
-          <input type="text" placeholder="Nombre de usuario" id="username" />
-        </div>
-        <div class="pass">
-          <input type="password" placeholder="Contraseña" id="password" />
-        </div>
-        <div class="recordar">
-          <a href="./error404.html">Olvido su contraseña?</a>
-        </div>
-        <div>
-          <input type="submit" onclick="inicioSesion()" value="Ingresar" />
-        </div>
-        <div class="registro">Quiero hacer el <a href="#">registro</a></div>
-      </form>
+    <div class="conten">
+      <div class="conten__img">
+        <img src="../img/404.png" alt="" />
+        <p class="conten__number">404</p>
+      </div>
+      <div class="conten__Description">
+        <p class="conten__error">
+          UPSSSS!!!! Algo salio mal, pagina no encontrada.
+        </p>
+        <a href="../../index.html" class="conten__button">SACAME DE AQUI!.</a>
+      </div>
     </div>
-
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    <script src="../js/login.js"></script>
     <script src="../js/index.js"></script>
   </body>
 </html>
