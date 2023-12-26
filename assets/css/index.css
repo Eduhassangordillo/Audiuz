@@ -89,7 +89,86 @@ body {
 }
 
 
+/* ********************************** */
+/*         CONTENIDO PRINCIPAL        */
+/* ********************************** */
+.main-content {
+    grid-row: 1/3;
+    grid-column: 2/-1;
 
+    background-color: #121212;
+    padding: 2.5rem;
+
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+}
+
+.title-playlist {
+    font-size: 2.4rem;
+    color: #fff;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.title-playlist:hover {
+    text-decoration: underline;
+}
+
+.container-name-concentracion,
+.container-name-spotify-playlists {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.container-card-concentracion,
+.container-card-spotify-playlists {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+    gap: 2.4rem;
+}
+
+.card-concentracion,
+.card-spotify-playlists {
+    background-color: #181818;
+    border-radius: 0.5rem;
+    padding: 1.6rem;
+    box-shadow: 0 0 2rem rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease;
+    cursor: pointer;
+    position: relative;
+}
+
+.card-concentracion:hover,
+.card-spotify-playlists:hover {
+    background-color: #282828;
+}
+
+.card-img img {
+    width: 100%;
+    border-radius: 0.5rem;
+}
+
+.card-img {
+    overflow: hidden;
+}
+
+.card h2 {
+    margin-top: 1.5rem;
+    margin-bottom: 1rem;
+    font-size: 1.6rem;
+    font-weight: 600;
+}
+
+.card p {
+    font-size: 1.3rem;
+    font-weight: 400;
+    line-height: 1.5;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
 
 
 
