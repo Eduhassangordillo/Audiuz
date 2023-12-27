@@ -1,9 +1,9 @@
 function validarFormulario() {
-    var nombre = document.getElementById("nombre").value;
-    var email = document.getElementById("email").value;
-    var password = document.getElementById("password").value;
-    var confirmarPassword = document.getElementById("confirmarPassword").value;
-    var errorMessage = document.getElementById("error-message");
+    let nombre = document.getElementById("nombre").value;
+    let email = document.getElementById("email").value;
+    let password = document.getElementById("password").value;
+    let confirmarPassword = document.getElementById("confirmarPassword").value;
+    let errorMessage = document.getElementById("error-message");
 
     // Validar que el nombre no esté vacío
     if (nombre === "") {
@@ -12,15 +12,15 @@ function validarFormulario() {
     }
 
     // Validar formato de email
-    var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    let emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!emailRegex.test(email)) {
         errorMessage.innerHTML = "Por favor, ingrese un email válido.";
         return false;
     }
 
     // Validar que la contraseña tenga al menos 6 caracteres
-    if (password.length < 8) {
-        errorMessage.innerHTML = "La contraseña debe tener al menos 8 caracteres.";
+    if (password.length < 6) {
+        errorMessage.innerHTML = "La contraseña debe tener al menos 6 caracteres.";
         return false;
     }
 
