@@ -26,6 +26,16 @@
         <span>Audiuz</span>
       </div>
 
+      <form class="d-flex" id="formSearch" role="search">
+        <input
+          class="form-control me-2"
+          id="searchInput"
+          type="search"
+          placeholder="Search"
+          aria-label="Search"
+        />
+      </form>
+
       <div class="navbar">
         <div class="linkss"><a href="./index.html">Inicio</a></div>
         <div class="linkss"><a href="#">reproductor</a></div>
@@ -46,7 +56,17 @@
             alt=""
           />
         </a>
+        <form class="d-flex mx-2" id="formSearchMobile" role="search">
+          <input
+            class="form-control me-2"
+            id="searchInputMobile"
+            type="search"
+            placeholder="Search"
+            aria-label="Search"
+          />
+        </form>
       </div>
+
       <div class="navigation">
         <div class="ham-btn" onclick="showNav()">
           <span></span>
@@ -113,7 +133,7 @@
           </div>
         </a>
 
-        <a class="music" href="./assets/pages/pages-music/blueberry.html">
+        <a class="music" href="./assets/pages/pages-music/blueberryFaygo.html">
           <div class="img">
             <img src="./assets/img/img-music/blueberry.jpeg" alt="" />
           </div>
@@ -150,5 +170,6 @@
       crossorigin="anonymous"
     ></script>
     <script src="./assets/js/index.js"></script>
+    <script src="./assets/js/buscador.js"></script>
   </body>
 </html>
