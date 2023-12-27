@@ -2,7 +2,7 @@ function obtenerDatos() {
   const usuario = localStorage.getItem("user");
   console.log(usuario)
   if (usuario) {
-    document.getElementById("user").innerHTML = `Bienvenido a tu centro de control ${usuario}`;
+    document.getElementById("user").innerHTML = `Bienvenido a tu centro de control, "${usuario}"`;
   }
 }
 
@@ -11,7 +11,9 @@ window.addEventListener("load", function () {
 });
 
 
+
 let canciones = []
+
 
 function mostrarFormulario() {
   // Mostrar el formulario para agregar una nueva canción
@@ -35,28 +37,25 @@ function añadirCancion() {
   // Actualizar la tabla de canciones
   actualizarTablaCanciones();
 }
+document.getElementById('formularioCancion').addEventListener('submit', function(event) {
+  // Prevenir la acción por defecto del formulario
+  event.preventDefault();
 
+  // Llamar a la función añadirCancion
+  añadirCancion();
+});
 function actualizarTablaCanciones() {
   // Obtener la referencia del elemento body
   let tablaCanciones = document.getElementById('tablaCanciones');
+  let CuerpoTablaCanciones = document.getElementById('CuerpoTablaCanciones');
 
   // Vaciar la tabla
-  tablaCanciones.innerHTML = '';
-
-  // Crear el encabezado de la tabla
-  let thead = tablaCanciones.createTHead();
-  let filaEncabezado = thead.insertRow();
-  let encabezadoNombre = filaEncabezado.insertCell();
-  let encabezadoArtista = filaEncabezado.insertCell();
-  let encabezadoAcciones = filaEncabezado.insertCell();
-  encabezadoNombre.innerHTML = "Canción";
-  encabezadoArtista.innerHTML = "Artista";
-  encabezadoAcciones.innerHTML = "Acciones";
+  CuerpoTablaCanciones.innerHTML = '';
 
   // Recorrer la lista de canciones
   for (let i = 0; i < canciones.length; i++) {
-      // Insertar una fila en la tabla
-      let fila = tablaCanciones.insertRow();
+      // Insertar una fila en el cuerpo de la tabla
+      let fila = CuerpoTablaCanciones.insertRow();
 
       // Insertar una celda para cada atributo de la canción
       let celdaNombre = fila.insertCell();
@@ -68,8 +67,8 @@ function actualizarTablaCanciones() {
       botonEditar.textContent = 'Editar';
       botonEditar.onclick = function() { editarCancion(i); };
       let botonEliminar = document.createElement('button');
-       botonEliminar.textContent = 'Eliminar';
-       botonEliminar.onclick = function() { eliminarCancion(i); };
+      botonEliminar.textContent = 'Eliminar';
+      botonEliminar.onclick = function() { eliminarCancion(i); };
 
       // Agregar la información a cada celda
       celdaNombre.innerHTML = canciones[i].nombre;

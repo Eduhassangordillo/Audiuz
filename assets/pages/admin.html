@@ -11,59 +11,92 @@
 </head>
 
 <body>
-    <!-- navbar -->
-    <div class="nav-desk">
+     <!-- navbar -->
+     <div class="nav-desk">
         <div class="cont-ico">
-            <img src="../img/imagen_2021-02-19_111917.png" class="img-ico" alt="" />
-            <span>Audiuz</span>
+          <img
+            src="/assets/img/imagen_2021-02-19_111917.png"
+            class="img-ico"
+            alt=""
+          />
+          <span>Audiuz</span>
         </div>
-
+  
+        <form class="d-flex" id="formSearch" role="search">
+          <input
+            class="form-control me-2"
+            id="searchInput"
+            type="search"
+            placeholder="Search"
+            aria-label="Search"
+          />
+        </form>
+  
         <div class="navbar">
-            <div class="linkss"><a href="../../index.html">Inicio</a></div>
-            <div class="linkss"><a href="#">reproductor</a></div>
-            <div class="linkss"><a href="./nostros2.html">sobre nosotros</a></div>
-            <div class="loglink">
-                <a href="./login.html">inicio de sesion</a>
-            </div>
+          <div class="linkss"><a href="/index.html">Inicio</a></div>
+          <div class="linkss"><a href="#">reproductor</a></div>
+          <div class="linkss">
+            <a href="/assets/pages/nostros2.html">sobre nosotros</a>
+          </div>
+          <div class="loglink">
+            <a href="/assets/pages/login.html">inicio de sesion</a>
+          </div>
         </div>
-    </div>
-    <div class="nav-mobile">
+      </div>
+      <div class="nav-mobile">
         <div class="container-ico">
-            <a href="../../index.html">
-                <img src="../img/imagen_2021-02-19_111917.png" class="img-ico" alt="" />
-            </a>
+          <a href="/index.html">
+            <img
+              src="/assets/img/imagen_2021-02-19_111917.png"
+              class="img-ico"
+              alt=""
+            />
+          </a>
+          <form class="d-flex mx-2" id="formSearchMobile" role="search">
+            <input
+              class="form-control me-2"
+              id="searchInputMobile"
+              type="search"
+              placeholder="Search"
+              aria-label="Search"
+            />
+          </form>
         </div>
+  
         <div class="navigation">
-            <div class="ham-btn" onclick="showNav()">
-                <span></span>
-                <span></span>
-                <span></span>
+          <div class="ham-btn" onclick="showNav()">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <span class="titulo">Audiuz</span>
+          <div class="links">
+            <div class="link">
+              <a href="/index.html">inicio</a>
             </div>
-            <span class="titulo">Audiuz</span>
-            <div class="links">
-                <div class="link">
-                    <a href="../../index.html">inicio</a>
-                </div>
-                <div class="link">
-                    <a href="#">reproductor</a>
-                </div>
-                <div class="link">
-                    <a href="./nostros2.html">sobre nosotros</a>
-                </div>
-                <div class="link">
-                    <a href="./login.html">inicio de sesion</a>
-                </div>
+            <div class="link">
+              <a href="#">reproductor</a>
             </div>
+            <div class="link">
+              <a href="/assets/pages/nostros2.html">sobre nosotros</a>
+            </div>
+            <div class="link">
+              <a href="/assets/pages/nostros2.html">inicio de sesion</a>
+            </div>
+          </div>
+        </div>
+      </div>
+<main>
+    <div class="d-flex justify-content-center mb-5 mt-5">
+        <div class="d-inline-block text-center border rounded p-3 bg-dark text-white">
+            <h1 id="user"> </h1>
         </div>
     </div>
-
-    <h1 id="user"> </h1>
 
 
     <div class="container">
-        <h1 class="text-center">Administración de canciones</h1>
+        <h1 class="text-center">Administrador de canciones</h1>
 
-        <h2>Agrega, edita o elimina tus canciones </h2>
         <form id="formularioCancion" class="mb-3" style="display: none;">
             <div class="mb-3">
                 <label for="nombreCancion" class="form-label">Nombre de la canción</label>
@@ -74,7 +107,7 @@
                 <input type="text" class="form-control" id="artistaCancion" placeholder="Artista de la canción">
             </div>
             <input type="hidden" id="indiceCancion">
-            <button type="button" class="btn btn-primary" onclick="añadirCancion()">Guardar</button>
+            <button type="submit" class="btn btn-primary">Guardar</button>
         </form>
 
         <table class="table table-striped table-hover" id="tablaCanciones">
@@ -85,27 +118,28 @@
                     <th>Acciones</th>
                 </tr>
             </thead>
-            <tbody id="canciones"></tbody>
+            <tbody id="CuerpoTablaCanciones"></tbody>
         </table>
+        <form id="formularioEditar" class="mb-3" style="display: none;">
+            <div class="mb-3">
+                <label for="nombreCancionEditar" class="form-label">Nombre de la canción</label>
+                <input type="text" class="form-control" id="nombreCancionEditar" placeholder="Nombre de la canción">
+            </div>
+            <div class="mb-3">
+                <label for="artistaCancionEditar" class="form-label">Artista de la canción</label>
+                <input type="text" class="form-control" id="artistaCancionEditar" placeholder="Artista de la canción">
+            </div>
+            <input type="hidden" id="indiceCancionEditar">
+            <button type="button" class="btn btn-primary" onclick="guardarCambios()">Guardar cambios</button>
+        </form>
     </div>
-    <form id="formularioEditar" class="mb-3" style="display: none;">
-        <div class="mb-3">
-            <label for="nombreCancionEditar" class="form-label">Nombre de la canción</label>
-            <input type="text" class="form-control" id="nombreCancionEditar" placeholder="Nombre de la canción">
-        </div>
-        <div class="mb-3">
-            <label for="artistaCancionEditar" class="form-label">Artista de la canción</label>
-            <input type="text" class="form-control" id="artistaCancionEditar" placeholder="Artista de la canción">
-        </div>
-        <input type="hidden" id="indiceCancionEditar">
-        <button type="button" class="btn btn-primary" onclick="guardarCambios()">Guardar cambios</button>
-    </form>
-    <button class="btn btn-primary mb-3" onclick="mostrarFormulario()">Agregar canción</button>
+
+    <button class="btn btn-primary mb-3 mt-3" onclick="mostrarFormulario()">Agregar canción</button>
 
 
 
 
-    <button class="btn btn-dark" onclick="cerrarSesion()">Cerrar Sesion</button>
+</main>
 
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
