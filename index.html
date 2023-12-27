@@ -10,19 +10,17 @@
       integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
       crossorigin="anonymous"
     />
-    <link
-      rel="stylesheet"
-      href="https://cdn-uicons.flaticon.com/2.0.0/uicons-regular-rounded/css/uicons-regular-rounded.css"
-    />
     <link rel="stylesheet" href="./assets/css/index.css" />
+    <link rel="stylesheet" href="./assets/css/music.css" />
   </head>
 
   <body>
+    <!-- navbar -->
     <div class="nav-desk">
       <div class="cont-ico">
         <img
           src="./assets/img/imagen_2021-02-19_111917.png"
-          class="img"
+          class="img-ico"
           alt=""
         />
         <span>Audiuz</span>
@@ -31,7 +29,9 @@
       <div class="navbar">
         <div class="linkss"><a href="./index.html">Inicio</a></div>
         <div class="linkss"><a href="#">reproductor</a></div>
-        <div class="linkss"><a href="./assets/pages/nostros2.html">sobre nosotros</a></div>
+        <div class="linkss">
+          <a href="./assets/pages/nostros2.html">sobre nosotros</a>
+        </div>
         <div class="loglink">
           <a href="./assets/pages/login.html">inicio de sesion</a>
         </div>
@@ -42,7 +42,7 @@
         <a href="./index.html">
           <img
             src="./assets/img/imagen_2021-02-19_111917.png"
-            class="img"
+            class="img-ico"
             alt=""
           />
         </a>
@@ -67,100 +67,81 @@
           <div class="link">
             <a href="./assets/pages/login.html">inicio de sesion</a>
           </div>
-          <nav class="search">
-            <div class="container-fluid">
-              <form class="d-flex" role="search">
-                <input
-                  class="form-control"
-                  type="search"
-                  placeholder="Search"
-                  aria-label="Search"
-                />
-                <button class="btn bt" type="submit">
-                  <i class="fi fi-rr-search"></i>
-                </button>
-              </form>
-            </div>
-          </nav>
         </div>
       </div>
     </div>
-    <main class="container">
-      <section>
-        <div id="carouselExampleCaptions" class="carousel slide">
-          <div class="carousel-indicators">
-            <button
-              type="button"
-              data-bs-target="#carouselExampleCaptions"
-              data-bs-slide-to="0"
-              class="active"
-              aria-current="true"
-              aria-label="Slide 1"
-            ></button>
-            <button
-              type="button"
-              data-bs-target="#carouselExampleCaptions"
-              data-bs-slide-to="1"
-              aria-label="Slide 2"
-            ></button>
-            <button
-              type="button"
-              data-bs-target="#carouselExampleCaptions"
-              data-bs-slide-to="2"
-              aria-label="Slide 3"
-            ></button>
-          </div>
-          <div class="carousel-inner">
-            <div class="carousel-item active">
-              <img src="..." class="d-block w-100" alt="..." />
-              <div class="carousel-caption d-none d-md-block">
-                <h5>First slide label</h5>
-                <p>
-                  Some representative placeholder content for the first slide.
-                </p>
-              </div>
-            </div>
-            <div class="carousel-item">
-              <img src="..." class="d-block w-100" alt="..." />
-              <div class="carousel-caption d-none d-md-block">
-                <h5>Second slide label</h5>
-                <p>
-                  Some representative placeholder content for the second slide.
-                </p>
-              </div>
-            </div>
-            <div class="carousel-item">
-              <img src="..." class="d-block w-100" alt="..." />
-              <div class="carousel-caption d-none d-md-block">
-                <h5>Third slide label</h5>
-                <p>
-                  Some representative placeholder content for the third slide.
-                </p>
-              </div>
-            </div>
-          </div>
-          <button
-            class="carousel-control-prev"
-            type="button"
-            data-bs-target="#carouselExampleCaptions"
-            data-bs-slide="prev"
-          >
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Previous</span>
-          </button>
-          <button
-            class="carousel-control-next"
-            type="button"
-            data-bs-target="#carouselExampleCaptions"
-            data-bs-slide="next"
-          >
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Next</span>
-          </button>
-        </div>
-      </section>
+
+    <main>
       <section class="container_music">
-        
+        <a class="music" href="./assets/pages/pages-music/fruto.html">
+          <div class="img">
+            <img src="./assets/img/img-music/fruto.jpeg" alt="" />
+          </div>
+          <div class="nombre">
+            <h4>Fruto</h4>
+            <p>Bizarrap, Milo j</p>
+          </div>
+        </a>
+
+        <a class="music" href="./assets/pages/pages-music/maVie.html">
+          <div class="img">
+            <img src="./assets/img/img-music/ma vie.jpeg" alt="" />
+          </div>
+          <div class="nombre">
+            <h4>Ma vie</h4>
+            <p>Kidd keo, Yay</p>
+          </div>
+        </a>
+
+        <a class="music" href="./assets/pages/pages-music/milagrosa.html">
+          <div class="img">
+            <img src="./assets/img/img-music/milagosa.jpeg" alt="" />
+          </div>
+          <div class="nombre">
+            <h4>Milagosa</h4>
+            <p>Milo j</p>
+          </div>
+        </a>
+
+        <a class="music" href="./assets/pages/pages-music/raraVez.html">
+          <div class="img">
+            <img src="./assets/img/img-music/rera vez.jpeg" alt="" />
+          </div>
+          <div class="nombre">
+            <h4>Rara vez</h4>
+            <p>Taiu, Milo j</p>
+          </div>
+        </a>
+
+        <a class="music" href="./assets/pages/pages-music/blueberry.html">
+          <div class="img">
+            <img src="./assets/img/img-music/blueberry.jpeg" alt="" />
+          </div>
+          <div class="nombre">
+            <h4>Blueberry Faygo</h4>
+            <p>Lil Mosey</p>
+          </div>
+        </a>
+
+        <a class="music" href="./assets/pages/pages-music/noticed.html">
+          <div class="img">
+            <img src="./assets/img/img-music/noticed.jpeg" alt="" />
+          </div>
+          <div class="nombre">
+            <h4>Noticed</h4>
+            <p>Lil Mosey</p>
+          </div>
+        </a>
+
+        <a class="music" href="./assets/pages/pages-music/oneUp.html">
+          <div class="img">
+            <img src="./assets/img/img-music/oneup.jpeg" alt="" />
+          </div>
+          <div class="nombre">
+            <h4>One Up</h4>
+            <p>Central Cee</p>
+          </div>
+        </a>
       </section>
     </main>
     <script
