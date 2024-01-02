@@ -1,152 +1,199 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-    <link rel="stylesheet" href="../css/index.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="../css/index.css" />
     <title>Administrador</title>
-</head>
+  </head>
 
-<body>
-     <!-- navbar -->
-     <div class="nav-desk">
-        <div class="cont-ico">
+  <body>
+    <!-- navbar -->
+    <div class="nav-desk">
+      <div class="cont-ico">
+        <img
+          src="/assets/img/imagen_2021-02-19_111917.png"
+          class="img-ico"
+          alt=""
+        />
+        <span>Audiuz</span>
+      </div>
+
+      <form class="d-flex" id="formSearch" role="search">
+        <input
+          class="form-control me-2"
+          id="searchInput"
+          type="search"
+          placeholder="Search"
+          aria-label="Search"
+        />
+      </form>
+
+      <div class="navbar">
+        <div class="linkss"><a href="/index.html">Inicio</a></div>
+        <div class="linkss"><a href="#">reproductor</a></div>
+        <div class="linkss">
+          <a href="./assets/pages/nostros2.html">sobre nosotros</a>
+        </div>
+        <button
+          class="btn btn-outline-light my-2 my-sm-0"
+          onclick="cerrarSesion()"
+        >
+          Cerrar Sesion
+        </button>
+      </div>
+    </div>
+    <div class="nav-mobile">
+      <div class="container-ico">
+        <a href="./index.html">
           <img
-            src="/assets/img/imagen_2021-02-19_111917.png"
+            src="./assets/img/imagen_2021-02-19_111917.png"
             class="img-ico"
             alt=""
           />
-          <span>Audiuz</span>
-        </div>
-  
-        <form class="d-flex" id="formSearch" role="search">
+        </a>
+        <form class="d-flex mx-2" id="formSearchMobile" role="search">
           <input
             class="form-control me-2"
-            id="searchInput"
+            id="searchInputMobile"
             type="search"
             placeholder="Search"
             aria-label="Search"
           />
         </form>
-  
-        <div class="navbar">
-          <div class="linkss"><a href="/index.html">Inicio</a></div>
-          <div class="linkss"><a href="#">reproductor</a></div>
-          <div class="linkss">
+      </div>
+
+      <div class="navigation">
+        <div class="ham-btn" onclick="showNav()">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        <span class="titulo">Audiuz</span>
+        <div class="links">
+          <div class="link">
+            <a href="./index.html">inicio</a>
+          </div>
+          <div class="link">
+            <a href="#">reproductor</a>
+          </div>
+          <div class="link">
             <a href="./assets/pages/nostros2.html">sobre nosotros</a>
           </div>
-          <button class="btn btn-outline-light my-2 my-sm-0" onclick="cerrarSesion()">Cerrar Sesion</button>
+          <button
+            class="btn btn-outline-light my-2 my-sm-0"
+            onclick="cerrarSesion()"
+          >
+            Cerrar Sesion
+          </button>
         </div>
       </div>
-      <div class="nav-mobile">
-        <div class="container-ico">
-          <a href="./index.html">
-            <img
-              src="./assets/img/imagen_2021-02-19_111917.png"
-              class="img-ico"
-              alt=""
-            />
-          </a>
-          <form class="d-flex mx-2" id="formSearchMobile" role="search">
-            <input
-              class="form-control me-2"
-              id="searchInputMobile"
-              type="search"
-              placeholder="Search"
-              aria-label="Search"
-            />
-          </form>
-        </div>
-  
-        <div class="navigation">
-          <div class="ham-btn" onclick="showNav()">
-            <span></span>
-            <span></span>
-            <span></span>
-          </div>
-          <span class="titulo">Audiuz</span>
-          <div class="links">
-            <div class="link">
-              <a href="./index.html">inicio</a>
-            </div>
-            <div class="link">
-              <a href="#">reproductor</a>
-            </div>
-            <div class="link">
-              <a href="./assets/pages/nostros2.html">sobre nosotros</a>
-            </div>
-            <button class="btn btn-outline-light my-2 my-sm-0" onclick="cerrarSesion()">Cerrar Sesion</button>
-          </div>
-        </div>
-      </div>
-<main>
-    <div class="d-flex justify-content-center mb-5 mt-5">
-        <div class="d-inline-block text-center border rounded p-3 bg-dark text-white">
-            <h1 id="user"> </h1>
-        </div>
     </div>
+    <main>
+      <div class="d-flex justify-content-center mb-5 mt-5">
+        <div
+          class="d-inline-block text-center border rounded p-3 bg-dark text-white"
+        >
+          <h1 id="user"></h1>
+        </div>
+      </div>
 
-
-    <div class="container">
+      <div class="container">
         <h1 class="text-center">Administrador de canciones</h1>
 
-        <form id="formularioCancion" class="mb-3" style="display: none;">
-            <div class="mb-3">
-                <label for="nombreCancion" class="form-label">Nombre de la canción</label>
-                <input type="text" class="form-control" id="nombreCancion" placeholder="Nombre de la canción">
-            </div>
-            <div class="mb-3">
-                <label for="artistaCancion" class="form-label">Artista de la canción</label>
-                <input type="text" class="form-control" id="artistaCancion" placeholder="Artista de la canción">
-            </div>
-            <input type="hidden" id="indiceCancion">
-            <button type="submit" class="btn btn-primary">Guardar</button>
+        <form id="formularioCancion" class="mb-3" style="display: none">
+          <div class="mb-3">
+            <label for="nombreCancion" class="form-label"
+              >Nombre de la canción</label
+            >
+            <input
+              type="text"
+              class="form-control"
+              id="nombreCancion"
+              placeholder="Nombre de la canción"
+            />
+          </div>
+          <div class="mb-3">
+            <label for="artistaCancion" class="form-label"
+              >Artista de la canción</label
+            >
+            <input
+              type="text"
+              class="form-control"
+              id="artistaCancion"
+              placeholder="Artista de la canción"
+            />
+          </div>
+          <input type="hidden" id="indiceCancion" />
+          <button type="submit" class="btn btn-primary">Guardar</button>
         </form>
 
         <table class="table table-striped table-hover" id="tablaCanciones">
-            <thead>
-                <tr>
-                    <th>Nombre de la canción</th>
-                    <th>Artista de la canción</th>
-                    <th>Acciones</th>
-                </tr>
-            </thead>
-            <tbody id="CuerpoTablaCanciones"></tbody>
+          <thead>
+            <tr>
+              <th>Nombre de la canción</th>
+              <th>Artista de la canción</th>
+              <th>Acciones</th>
+            </tr>
+          </thead>
+          <tbody id="CuerpoTablaCanciones"></tbody>
         </table>
-        <form id="formularioEditar" class="mb-3" style="display: none;">
-            <div class="mb-3">
-                <label for="nombreCancionEditar" class="form-label">Nombre de la canción</label>
-                <input type="text" class="form-control" id="nombreCancionEditar" placeholder="Nombre de la canción">
-            </div>
-            <div class="mb-3">
-                <label for="artistaCancionEditar" class="form-label">Artista de la canción</label>
-                <input type="text" class="form-control" id="artistaCancionEditar" placeholder="Artista de la canción">
-            </div>
-            <input type="hidden" id="indiceCancionEditar">
-            <button type="button" class="btn btn-primary" onclick="guardarCambios()">Guardar cambios</button>
+        <form id="formularioEditar" class="mb-3" style="display: none">
+          <div class="mb-3">
+            <label for="nombreCancionEditar" class="form-label"
+              >Nombre de la canción</label
+            >
+            <input
+              type="text"
+              class="form-control"
+              id="nombreCancionEditar"
+              placeholder="Nombre de la canción"
+            />
+          </div>
+          <div class="mb-3">
+            <label for="artistaCancionEditar" class="form-label"
+              >Artista de la canción</label
+            >
+            <input
+              type="text"
+              class="form-control"
+              id="artistaCancionEditar"
+              placeholder="Artista de la canción"
+            />
+          </div>
+          <input type="hidden" id="indiceCancionEditar" />
+          <button
+            type="button"
+            class="btn btn-primary"
+            onclick="guardarCambios()"
+          >
+            Guardar cambios
+          </button>
         </form>
-    </div>
+      </div>
 
-    <button class="btn btn-primary mb-3 mt-3" onclick="mostrarFormulario()">Agregar canción</button>
-
-
-
-
-</main>
+      <button class="btn btn-primary mb-3 mt-3" onclick="mostrarFormulario()">
+        Agregar canción
+      </button>
+    </main>
 
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
-        crossorigin="anonymous"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+      crossorigin="anonymous"
+    ></script>
 
-    <script src="./assets/js/login.js"></script>
+    <script src="../js/login.js"></script>
 
     <script src="../js/index.js"></script>
 
-    <script src="./assets/js/admin.js"></script>
-</body>
-
+    <script src="../js/admin.js"></script>
+  </body>
 </html>
